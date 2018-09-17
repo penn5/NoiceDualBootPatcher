@@ -12,8 +12,8 @@
 - On some weird devices (that don't conform to google specs) there is a risk that the boot.img requires AVB to work. This is also the case on Huawei's patch01 if I understand correctly. Currently, the system will simply pad the AVB field with nulls. This means that the checksum will fail if your device has a non-null AVB field (aka stock, unpatched boot.img). This will be fixed in a later release, as it will fail the checksum check. 
 
 ## Usage
-0. Get the file containing your ramdisk from the phone or stock rom and put it in this folder with the name `boot.img`
-1. Clone this repo
+0. Clone this repo
+1. Get the file containing your ramdisk from the phone or stock rom and put it in this folder with the name `boot.img`
 2. `make`
 3. Run as either `fakeroot` (unsupported) or root (either `sudo` or `su`): `python3 main.py`
 4. The output will be generated in `boot.img-repack`
