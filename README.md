@@ -32,9 +32,9 @@
 7. Navigate to /mnt/tmp
 8. Click the blue folder icon in the bottom right corner.
 9. Select 'Copy'
-10.Navigate to /system/(a|b) (make the folder if it doesn't exist)
-11.Click the blue folder icon again and paste the files. This will take a while.
-12.Reboot System!
+10. Navigate to /system/(a|b) (make the folder if it doesn't exist)
+11. Click the blue folder icon again and paste the files. This will take a while.
+12. Reboot System!
 N.B. I will make a wrapper for this soonish - Done - https://github.com/penn5/DualBootInstaller
 
 ## Getting Logs
