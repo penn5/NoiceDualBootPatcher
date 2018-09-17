@@ -3,3 +3,6 @@
 *.exe
 mkbootimg
 unpackbootimg
+boot.img
+boot.img*
+

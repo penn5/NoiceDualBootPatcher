@@ -1,4 +1,4 @@
-# DualBootPatcher
+# NoiceDualBootPatcher
  
 ### This is a collection of scripts that will patch your ramdisk (part of the kernel) to allow you do dualboot your Android phone.
 
