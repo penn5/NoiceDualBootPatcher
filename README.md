@@ -21,6 +21,22 @@
 6. Wipe data and cache in TWRP
 7. Reboot!
 
+## Installing a dual system
+0. Download the zip file for the system
+1. Extract it.
+2. If there are any .br files, extract them too (brotli)
+3. Use https://github.com/xpirt/sdat2img to covert it to a system.img
+4. Send this system.img to the phone
+5. Enter the twrp shell (Advanced --> Terminal) and run (replacing paths with the correct ones) `rm -rf /mnt/tmp;mkdir /mnt/tmp;mount -o loop -t auto /path/to/system.img /mnt/tmp`
+6. Exit the twrp shell and enter File Manager
+7. Navigate to /mnt/tmp
+8. Click the blue folder icon in the bottom right corner.
+9. Select 'Copy'
+10.Navigate to /system/(a|b) (make the folder if it doesn't exist)
+11.Click the blue folder icon again and paste the files. This will take a while.
+12.Reboot System!
+N.B. I will make a wrapper for this soonish
+
 ## Getting Logs
 - If it is booting, get /dev/mounts - this is a tmpfs with all the logs in
 - If it isn't booting, send the `ramdisk` folder relative to this file.
