@@ -6,3 +6,4 @@ unpackbootimg
 gen_init_cpio
 boot.img
 boot.img*
+ramdisk
