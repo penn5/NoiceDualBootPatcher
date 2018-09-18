@@ -3,13 +3,19 @@
 
 echo MOUNTS.POSTDATA > /dev/mounts/postdata
 echo $(mount) >> /dev/mounts/postdata
+mkdir -p /data/$(cat /dev/mounts/active)
+mkdir -p /cache/$(cat /dev/mounts/active)
 # in the initscript we await for /dev/mounts/active, so we can be sure that it exists and contains either 'a' or 'b'
 echo mount -o bind /data/$(cat /dev/mounts/active) /data >> /dev/mounts/postdata
 echo NOW RUNNING >> /dev/mounts/postdata
 mount -o bind /data/$(cat /dev/mounts/active) /data >> /dev/mounts/postdata
 echo $? >> /dev/mounts/postdata
 echo YAY... it ran! >> /dev/mounts/postdata
-
+echo mount -o bind /cache/$(cat /dev/mounts/active) /cache >> /dev/mounts/postdata
+echo NOW RUNNING >> /dev/mounts/postdata
+mount -o bind /cache/$(cat /dev/mounts/active) /cache >> /dev/mounts/postdata
+echo $? >> /dev/mounts/postdata
+echo YAY cache done too!
 #It'd be good to log stuff into a pstore, but i cant work out how... any PR is appreciated.
 
 

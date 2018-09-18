@@ -6,10 +6,11 @@ export PATH=$PATH:/system/b/bin:/system/a/bin #This means that we can use the bi
 #Next, we check which volume key is pressed first
 echo MOUNTS.B Starting mounts.b.sh >> /dev/mounts/b
 echo MOUNTS.B Checking for A success?
-if [ -f /dev/mounts/b ]
+if [ -f /dev/mounts/a ]
 then
-    echo MOUNTS.B Found file... This indicates bootstrap succeeded. Performing final checks...
-    echo MOUNTS.B And yet... if the real /system is mounted, this script wouldn't be able to run, as the interpreter here is set to use B. So we rerun the mounting and detection code.
+    echo MOUNTS.B Found file... This indicates bootstrap succeeded.
+    echo MOUNTS.B And yet... if the real /system is mounted, this script wouldn't be able to run, as the interpreter here is set to use B. So we abort because even the real human is confused after all this has been realised.
+    exit 2
 else
     echo MOUNTS.B A_script didn't start.
 fi
