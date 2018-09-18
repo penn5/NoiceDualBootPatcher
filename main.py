@@ -4,7 +4,7 @@ def extractboot():
     tags = subprocess.check_output(['./unpackbootimg', '-i', './boot.img']).split(b'\n')[:-1]
     print(tags)
     tags = {z.split(b' ')[0].replace(b'BOARD_',b'').replace(b'PAGE_SIZE', b'PAGESIZE').replace(b'HASH_TYPE', b'HASH').replace(b'KERNEL_CMDLINE', b'CMDLINE').replace(b'KERNEL_BASE', b'BASE').lower():z.split(b' ')[1] for z in tags}
-    return {key:val for key,val in tags.items() if not key=='dt_size'}
+    return {key:val for key,val in tags.items() if not key==b'dt_size'}
 def repackboot(tags, ramdisk='./boot.img-ramdisk.gz', verify=False):
     try:
         os.remove('./boot.img-repack')
