@@ -22,6 +22,9 @@
 7. Reboot!
 
 ## Installing a dual system
+
+https://github.com/penn5/DualBootInstaller will do it automatically.
+
 0. Download the zip file for the system
 1. Extract it.
 2. If there are any .br files, extract them too (brotli)
@@ -35,7 +38,6 @@
 10. Navigate to /system/(a|b) (make the folder if it doesn't exist)
 11. Click the blue folder icon again and paste the files. This will take a while.
 12. Reboot System!
-N.B. I will make a wrapper for this soonish - Done - https://github.com/penn5/DualBootInstaller
 
 ## Getting Logs
 - If it is booting, get /dev/mounts - this is a tmpfs with all the logs in
