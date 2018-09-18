@@ -1,1 +1,47 @@
 <!DOCTYPE html>
+<html>
+<head>
+<title>DualBootPatcher Docs</title>
+</head>
+<body>
+
+
+<h1>DualBootPatcher Docs</h1>
+<p>This program is designed to run on Linux, and will patch a boot.img file to support dual-booting</p>
+<p>It uses the osm0sis mkbootimg tools to unpack and repack the bootimg. It uses home-written scripts to enable the actual dual-booting though.</p>
+<h2>Dependencies</h2>
+<ul>
+<li>build-essential</li>
+<li>Linux</li>
+</ul>
+<h2>Usage</h2>
+<ol>
+<li>Clone this repo and enter it's directory</li>
+<li>Run <pre>make</pre></li>
+<li>Extract boot.img (RAMDISK.img for Huawei) from phone</li>
+<li>Remove the AVB Footer. One method is by installing Magisk.</li>
+<li>Copy the boot.img without the AVB footer into this directory</li>
+<li>Run <pre>sudo python3 main.py</pre></li>
+<li>Now there is a file boot.img-repack. Install it to the same partition it came from.</li>
+</ol>
+<h2>Installing a dual system</h2>
+<p>The way that the dualbooter works is by mounting /system/[ab] over /system. This means that whatever files you put in /system will be perfectly replicated to /system (including symlinks). It does the same to /data and /cache</p>
+<h3>Installing a system</h3>
+<p><a href="https://github.com/penn5/DualBootInstaller">Try this for an automated installation</a></p>
+<ol>
+<li>Download the zip file for the system</li>
+<li>Extract it.</li>
+<li>If there are any .br files, extract them too (brotli)</li>
+<li>Use https://github.com/xpirt/sdat2img to covert it to a system.img</li>
+<li>Send this system.img to the phone</li>
+<li>Enter the twrp shell (Advanced --> Terminal) and run (replacing paths with the correct ones) rm -rf /mnt/tmp;mkdir /mnt/tmp;mount -o loop -t auto /path/to/system.img /mnt/tmp</li>
+<li>Exit the twrp shell and enter File Manager</li>
+<li>Navigate to /mnt/tmp<li>
+<li>Click the blue folder icon in the bottom right corner.</li>
+<li>Select 'Copy'</li>
+<li>Navigate to /system/(a|b) (make the folder if it doesn't exist)</li>
+<li>Click the blue folder icon again and paste the files. This will take a while.</li>
+<li>Reboot System!</li>
+</ol>
+</body>
+</html>
