@@ -148,7 +148,6 @@ service mounts_postdata /mounts.postdata.sh
     group root
 
 on early-init
-    rm /splash2/mounts.sh.start
     mkdir /dev/mounts
     exec_start mounts_nontreble
     exec_start mounts_a
